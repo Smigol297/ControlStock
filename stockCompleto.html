@@ -4,26 +4,25 @@ include("conexion.php");
 ?>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >	
 	<meta name="viewport" content="width=device-width, initial-scale=0.65">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<title> Stock disponible </title>
+	<title> Stock completo </title>
 </head>
 <body>
 	<body >
 	<br>
 	<div align=center class="btn-group btn-group-justified">
-	<a href="stockCompleto.php" class="btn btn-warning" role="button">Stock completo</a>
-	<a href="Inicio.php" class="btn btn-warning" role="button" >Inicio</a>
+	<a href="stock.html" class="btn btn-warning" role="button">Stock disponible</a>
+	<a href="Inicio.html" class="btn btn-warning" role="button" >Inicio</a>
 	</div>
 	<br>
 	<input class="form-control" id="myInput" type="text" placeholder="Search..">
 	<br>
-	<table class="table table-condensed" align =center > 
+	<table class="table table-condensed" align =center >
 	<thead>
-		<tr class="container-fluid" >
+		<tr div align=center class="container-fluid">
 			<th class="text-center"> Nro de Serie </th> 
 			<th class="text-center"> Tipo </th>
 			<th class="text-center"> Marca </th>
@@ -35,15 +34,15 @@ include("conexion.php");
 			<th class="text-center"> Imagen </th> 
 		</tr>
 	</thead>
-    <tbody id="myTable">
+	<tbody id="myTable">
 		<?php
 		$con=conectar();
-		$query = "SELECT * FROM producto WHERE stock > 0 ";
+		$query = "SELECT * FROM producto ";
 		$resultado = mysqli_query($con, $query) or die ("Algo paso");
 		while ($columna = mysqli_fetch_array($resultado))
 				{
 		?>
-					<tr div align=center class="container-fluid" class="text-center" id="myDIV">
+					<tr div align=center class="container-fluid" class="text-center">
 						<td><?php echo $columna['nro_serie'];?></td>
 						<td><?php echo $columna['tipo'];?></td>
 						<td><?php echo $columna['marca'];?></td>
