@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<title>Inicio</title>
+	</head>
+	<body >
+		<br><br><br><br>
+		<table class="table">
+		<tbody>
+		<tr>
+			<th class="text-center"><a href="paginaVenta.php" class="btn btn-warning">Venta</a> </th>
+		</tr>
+		<tr>
+			<th class="text-center"><a href="stock.php" class="btn btn-warning">Ver stock disponible </a> </th>
+		</tr>
+		<tr>
+			<th class="text-center"><a href="paginaAgregarElementos.php" class="btn btn-warning">Agregar elementos</a> </th>
+		</tr>
+		<tr>
+			<th class="text-center"><a href="paginaModificarPrecio.php" class="btn btn-warning">Modificar precio</a> </th>
+		</tr>
+		<tr>
+			<th class="text-center"> <a href="paginaAnadirProducto.php" class="btn btn-warning">Agregar nuevo producto</a> </th>
+		</tr>
+		<tr>
+			<th class="text-center"> <a href="historialVentas.php" class="btn btn-warning">Historial de ventas</a> </th>
+		</tr>
+	</tbody>
+	</table>
+	</body>
+</html>

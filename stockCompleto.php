@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<?php
+include("conexion.php");
+?>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=0.65">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title> Stock completo </title>
+</head>
+<body>
+	<body >
+	<br>
+	<div align=center class="btn-group btn-group-justified">
+	<a href="stock.php" class="btn btn-warning" role="button">Stock disponible</a>
+	<a href="Inicio.php" class="btn btn-warning" role="button" >Inicio</a>
+	</div>
+	<br>
+	<input class="form-control" id="myInput" type="text" placeholder="Search..">
+	<br>
+	<table class="table table-condensed" align =center >
+	<thead>
+		<tr div align=center class="container-fluid">
+			<th class="text-center"> Nro de Serie </th> 
+			<th class="text-center"> Tipo </th>
+			<th class="text-center"> Marca </th>
+			<th class="text-center"> Modelo </th> 
+			<th class="text-center"> Precio </th> 
+			<th class="text-center"> Cantidad </th> 
+			<th class="text-center"> Color </th> 
+			<th class="text-center"> Hombre/Mujer </th> 
+			<th class="text-center"> Imagen </th> 
+		</tr>
+	</thead>
+	<tbody id="myTable">
+		<?php
+		$con=conectar();
+		$query = "SELECT * FROM producto ";
+		$resultado = mysqli_query($con, $query) or die ("Algo paso");
+		while ($columna = mysqli_fetch_array($resultado))
+				{
+		?>
+					<tr div align=center class="container-fluid" class="text-center">
+						<td><?php echo $columna['nro_serie'];?></td>
+						<td><?php echo $columna['tipo'];?></td>
+						<td><?php echo $columna['marca'];?></td>
+						<td><?php echo $columna['modelo'];?></td>
+						<td><?php echo $columna['precio'];?></td>
+						<td><?php echo $columna['stock'];?></td>
+						<td><?php echo $columna['color'];?></td>
+						<td><?php echo $columna['genero'];?></td>
+						<td><img height="200px" src = "data:image/jpg;base64, <?php echo base64_encode($columna['imagen']); ?>"/> </td>
+					</tr>
+		<?php
+				}
+		?>
+	</tbody>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+	</table>
+</body>
+</html>
