@@ -14,10 +14,9 @@ function HistorialVentas() {
         <thead>
             <tr class="container-fluid">
                 <th class="text-center"> Fecha </th> 
-                <th class="text-center"> Nro de serie </th>
-                <th class="text-center"> Cantidad </th>
+                <th class="text-center"> Nombre </th>
                 <th class="text-center"> DNI </th> 
-                <th class="text-center"> Nombre y apellido </th> 
+                <th class="text-center"> Monto </th> 
             </tr>
         </thead>
     </table>

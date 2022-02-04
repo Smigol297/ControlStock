@@ -8,6 +8,8 @@ import PaginaModificarPrecio from './links/paginaModificarPrecio';
 import PaginaVenta from './links/paginaVenta';
 import Stock from './links/Stock';
 import StockCompleto from './links/StockCompleto';
+import Form from './links/Test';
+import Test from './links/Test';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
 		  <Route exact path="/paginaVenta" element={<PaginaVenta/>}/>
 		  <Route exact path="/Stock" element={<Stock/>}/>
 		  <Route exact path="/StockCompleto" element={<StockCompleto/>}/>
+		  <Route exact path="/Test" element={<Form/>}/>
         </Routes>
 	</BrowserRouter>
   );
